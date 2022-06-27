@@ -1,0 +1,15 @@
+데이터베이스 구조(MongoDB) Prototype버전
+
+
+account -> ID/이메일(hufs.ac.kr한정)/비밀번호/학번/가입날짜/계정등급
+
+계정등급은
+1->운영자
+0->일반
+-1->정지 상태(banned)
+
+post -> ID(key)/글쓴이(계정id)/제목/내용/동의/비동의
+
+community_post-> ID(key)/글쓴이(계정id)/제목/내용/동의/비동의 -> comments-> 로컬ID/글쓴이(계정id)
+
+specifier(예를 들면 비번을 8자 이상 등등) 개선 안되있으니 ./db/models에서 있는 Scheme모델에서 수정하기를 바랍니다
