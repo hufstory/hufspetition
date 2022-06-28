@@ -22,10 +22,6 @@ const app = express();
 //Use Helmet for protection purposes.
 app.use(helmet());
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views')); 
-app.set('view engine', 'pug');
-
 //Middleware
 app.use(session({
   secret: '해커들이절대때로때로로알아내지못할키', //키

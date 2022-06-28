@@ -3,7 +3,7 @@ const router = express.Router();
 
 /* GET home page. 임시 홈페이지 */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: '한국외국어대학교 Voting Site 환영합니다!' });
+  res.send('한국외국어대학교 Voting Site 환영합니다!');
 });
 
 //전에 말씀하셨던것처럼 일단 제일 인기많은 3개 청원 정보를 보내준다

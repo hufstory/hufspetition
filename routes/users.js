@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-/* GET users listing. */
+//LOGIN API 실험용도. 나중에 없애고 다른걸로 바꾸도록합시다 - 정현
 router.get('/', function(req, res, next) {
   if(req.session.loggedin)
   {
