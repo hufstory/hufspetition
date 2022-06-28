@@ -1,9 +1,9 @@
 const { default: mongoose, mongo } = require("mongoose");
 
 //Schema를 정의!
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-var post = new Schema(
+const post = new Schema(
     {
         postID: Number,       //KEY
         creatorID: Number,    //글쓴이 AccountID
@@ -14,6 +14,6 @@ var post = new Schema(
     }
 )
 
-var post_model = mongoose.model('post', post);
+const post_model = mongoose.model('post', post);
 
 module.exports = post_model;

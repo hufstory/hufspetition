@@ -1,9 +1,9 @@
 const { default: mongoose, mongo } = require("mongoose");
 
 //Schema를 정의!
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-var accountSchema = new Schema(
+const accountSchema = new Schema(
     {
         accountID: Number,
         email: String,
@@ -15,6 +15,6 @@ var accountSchema = new Schema(
    }
 )
 
-var accountModel = mongoose.model('account', accountSchema);
+const accountModel = mongoose.model('account', accountSchema);
 
 module.exports = accountModel;

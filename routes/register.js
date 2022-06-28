@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
-var bcrypt = require('bcrypt'); //암호화용 모듈
-var accountTemplate = require('../db/models/account');
+const express = require('express');
+const router = express.Router();
+const bcrypt = require('bcrypt'); //암호화용 모듈
+const accountTemplate = require('../db/models/account');
 
 router.get('/', function(req, res)
 {

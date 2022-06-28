@@ -1,21 +1,21 @@
 //모듈 불러오기
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var helmet = require('helmet'); //웹해킹 방지하는 모듈추가..
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const helmet = require('helmet'); //웹해킹 방지하는 모듈추가..
 
 //router(callback)
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var registerRouter = require('./routes/register');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const registerRouter = require('./routes/register');
 
 //데이터베이스
-var db          = require('./db/database');
+const db          = require('./db/database');
 
 // Create Express application
-var app = express();
+const app = express();
 
 //Use Helmet for protection purposes.
 app.use(helmet());

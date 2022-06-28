@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 /* GET home page. 임시 홈페이지 */
 router.get('/', function(req, res, next) {
