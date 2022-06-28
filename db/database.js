@@ -1,8 +1,3 @@
-/*
-Prototyping용도로 남김.
-아직은 MongoDB<->서버 헨들러를 구성하지 않았기때문에 ㅠㅠ.. 
-*/
-
 //mongoose 모듈을 불러오기
 const mongoose = require('mongoose');
 
