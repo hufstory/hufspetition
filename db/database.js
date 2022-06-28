@@ -6,7 +6,7 @@ Prototyping용도로 남김.
 //mongoose 모듈을 불러오기
 const mongoose = require('mongoose');
 
-//데이터베이스 모델 불러오기
+//데이터베이스 모델 리스트
 const account = require('./models/account');
 const community_post = require('./models/community_post');
 const post = require('./models/post');
