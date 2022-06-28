@@ -13,22 +13,41 @@ router.post('/', async (req, res)=> //회원가입을 위한 POST
     const salt = await bcrypt.genSalt(10); //Salt 생성
     const hashPassword = await bcrypt.hash(req.body.password, salt); //암호 헤쉬하기
 
-    const registerAcc = new accountTemplate(
-        {
-            accountID: req.body.accountID,
-            email: req.body.email,
-            password: hashPassword,
-            SchoolID: req.body.SchoolID,
-            RegistrationDate: req.body.RegistrationDate
+    accountTemplate.findOne({email: req.body.email})
+    .then(
+        (user)=>{
+            if(!user)
+            {
+                const registerAcc = new accountTemplate(
+                    {
+                        email: req.body.email,
+                        password: hashPassword,
+                        SchoolID: req.body.SchoolID,
+                    }
+                )
+                registerAcc.save()
+                .then(data=>{
+                    res.json(data);
+                })
+                .catch(error=>{
+                    res.json(error);
+                });
+            }
+            else
+            {
+                res.status(401).json({
+                    error: "이미 계정가지고 계십니다!"
+                });  
+            }
+        
+        }
+    ).catch(
+        (error) => {
+            res.status(500).json({
+                error: error
+            });
         }
     )
-    registerAcc.save()
-    .then(data=>{
-        res.json(data);
-    })
-    .catch(error=>{
-        res.json(error);
-    });
 })
 
 module.exports = router;

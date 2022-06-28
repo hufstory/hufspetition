@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 
 const post = new Schema(
     {
-        postID: Number,       //KEY
-        creatorID: Number,    //글쓴이 AccountID
+        //_id로 키활용
+        creatorID: String,    //글쓴이 AccountID(_id)
         Title: String,        //제목
         postDetail: String,   //글 내용
         AgreeCount: Number,   //동의

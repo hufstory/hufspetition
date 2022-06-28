@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 const community_post = new Schema(
     {
         postID: Number,       //KEY
-        creatorID: Number,    //글쓴이 AccountID
+        creatorID: String,    //글쓴이 AccountID(_id)
         Title: String,        //제목
         postDetail: String,   //글 내용
         AgreeCount: Number,   //동의
@@ -14,9 +14,8 @@ const community_post = new Schema(
         //CommentCount: {Type: Number, default: Comments.length}, //의미없기때문에 우선 주석처리
 
         //커뮤니티 글에서 뎃글 오브젝트
-        Comments: [{ //postID: Number,      //Non-relationship database이기 때문에.. 필요없어보이네여
-                    commentID: Number,     //익명1 익명2 등등.. commentID기준으로 유저네임 만들도록!
-                    accountID: Number,     //계정에 comment를 연동
+        Comments: [{   //_id로 활용
+                    accountID: String,     //계정에 comment를 연동(_id)
                     commentDetails: String //뎃글 내용
                   }]
     }

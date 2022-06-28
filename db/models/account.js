@@ -4,9 +4,8 @@ const { default: mongoose, mongo } = require("mongoose");
 const Schema = mongoose.Schema;
 
 const accountSchema = new Schema(
-    {
-        accountID: Number,
-        email: {
+    {   //MongoDB에는 primary key없고 _id대신 쓰기때문에 AccountID 필요없다
+        email: {    //계정 ID를 이메일로 활용
             type: String,
             trim: true,
             lowercase: true,
@@ -24,14 +23,7 @@ const accountSchema = new Schema(
             type: Number,
             validate: {
                 validator: function(v) {
-                    if(v.length != 9) //일단 학번 길이는 보통 20xx/xx/xxx이니..
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    return /^[0-9]{9}$/.test(v);
                 },
                 message: "9자리 학번 입력하시길 바랍니다."
             },
