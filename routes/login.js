@@ -14,7 +14,7 @@ router.get('/', function(req, res)
 //일단 Client Side Rendering이라고 가정하고 서버 API만 만들겠습니다 - 정현
 router.post('/authenticate', async(req, res)=>
 {
-    if(req.body.username || req.body.password == "")
+    if(req.body.username.length === 0 || req.body.password.length === 0)
     {
         res.send("이메일이랑 비밀번호 입력해주시길 바랍니다!");
         res.end();
