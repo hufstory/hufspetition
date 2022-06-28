@@ -20,7 +20,7 @@ router.post('/authenticate', async(req, res)=>
     }
     else
     {
-        accountTemplate.findOne({ email: req.body.username })
+        await accountTemplate.findOne({ email: req.body.username })
         .then(
             (user) => {
                 if(!user) {
