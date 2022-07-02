@@ -1,12 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt'); //암호화용 모듈
-const accountTemplate = require('../db/models/account');
-
-router.get('/', function(req, res)
-{
-    res.send("Login page. Please send an POST response here!");
-})
+const accountTemplate = require('../../db/models/account');
 
 //일단 Client Side Rendering이라고 가정하고 서버 API만 만들겠습니다 - 정현
 router.post('/authenticate', async(req, res)=>

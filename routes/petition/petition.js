@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', function(req, res, next) {
-    res.send('community post');
+    res.send('test petition');
   });
 
   //청원 글 만들기

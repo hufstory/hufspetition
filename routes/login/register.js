@@ -1,12 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt'); //암호화용 모듈
-const accountTemplate = require('../db/models/account');
-
-router.get('/', function(req, res)
-{
-    res.send("Register page. Please send an POST response here!");
-})
+const accountTemplate = require('../../db/models/account');
 
 router.post('/', async (req, res)=> //회원가입을 위한 POST
 {
