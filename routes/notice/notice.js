@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const noticeTemplate = require('../../db/models/notice');
 
 router.get('/', function(req, res, next) {
     res.send('test notice');

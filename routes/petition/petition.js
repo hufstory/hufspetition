@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const petitionTemplate = require('../../db/models/petition');
 
 router.get('/', function(req, res, next) {
     res.send('test petition');

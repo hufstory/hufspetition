@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const account = require('./models/account');
 const community_post = require('./models/community_post');
 const post = require('./models/post');
+const notice = require('./models/notice');
 
 //db connection
 const mongoDB = 'mongodb://127.0.0.1/hufs_vote'; //hufs_vote 데이터베이스 불러오기

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const cPostTemplate = require('../../db/models/community_post'); //자유게시판 데이터 베이스 모델
 
 router.get('/', function(req, res, next) {
     res.send('community post');
