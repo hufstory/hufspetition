@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 //데이터베이스 모델 리스트
 const account = require('./models/account');
 const community_post = require('./models/community_post');
-const post = require('./models/post');
+const petition = require('./models/petition');
 const notice = require('./models/notice');
 
 //db connection

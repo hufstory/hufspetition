@@ -35,11 +35,11 @@ router.post('/authenticate', async(req, res)=>
                         {
                             //세션 쿠기만들기
                             req.session.loggedin = true;
-                            req.session.username = req.body.username;
+                            req.session.AccID = user._id;
     
                             //json 포멧으로 보내기
                             res.status(200).json({
-                                accountID: user._id,
+                                accountID: user._id, //디버깅 용도이다. 나중에 없애도록
                                 username: user.email,
                                 message: '성공적으로 로그인을 하셨습니다!'
                             });

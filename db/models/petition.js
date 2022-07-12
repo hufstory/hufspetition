@@ -3,7 +3,7 @@ const { default: mongoose, mongo } = require("mongoose");
 //Schema를 정의!
 const Schema = mongoose.Schema;
 
-const notice = new Schema(
+const petition = new Schema(
     {
         //_id로 키활용
         creatorID: { //글쓴이 AccountID(_id)
@@ -25,13 +25,17 @@ const notice = new Schema(
         },        
         postDetail: { //글 내용
             type: String,
-            minLength: [10, '최소한 10자 이상 입력해주세여!'], 
+            minLength: [50, '최소한 50자 이상 입력해주세여!'], 
             maxLength: [500, '최대가 500자입니다!'],
             required: [true, "필수 항목입니다!"]
         },   
+        AgreeCount: { //동의
+            type: Number,
+            default: 1
+        }   
     }
 )
 
-const notice_model = mongoose.model('notice', notice);
+const petition_post_model = mongoose.model('petition_post', petition);
 
-module.exports = notice_model;
+module.exports = petition_post_model;
