@@ -24,7 +24,7 @@ const community_post = new Schema(
         },        
         postDetail: { //글 내용
             type: String,
-            minLength: [50, '최소한 50자 이상 입력해주세여!'], 
+            minLength: [10, '최소한 50자 이상 입력해주세여!'], 
             maxLength: [500, '최대가 500자입니다!'],
             required: [true, "필수 항목입니다!"]
         },   
@@ -45,7 +45,11 @@ const community_post = new Schema(
                         type: String,
                         maxLength: [500, '최대가 500자입니다!'],
                         required: [true, "필수 항목입니다!"]
-                    } //뎃글 내용
+                    }, //뎃글 내용
+                    commentLike:{
+                        type: Number,
+                        default : 0
+                    }
                   }]
     }
 )
