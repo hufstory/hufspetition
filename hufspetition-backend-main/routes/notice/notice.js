@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const noticeTemplate = require('../../db/models/notice');
+const accountTemplate = require('../../db/models/account');
 
 router.get('/', function(req, res, next) {
     res.send('test notice');
   });
 
     //공지사항 글 만들기
-    router.post('/create', async(req, res, next)
+    router.post('/create', async(req, res, next)=>
     {
       await accountTemplate.findById(req.session.AccID)
       .then(
@@ -50,7 +51,7 @@ router.get('/', function(req, res, next) {
     });
   
     //공지사항 글 불러오기
-    router.post('/send', async(req, res, next)
+    router.post('/send', async(req, res, next)=>
     {
       await noticeTemplate.findById(req.body.noticeID)
       .then(

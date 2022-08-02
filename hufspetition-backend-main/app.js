@@ -13,7 +13,7 @@ const usersRouter = require('./routes/login/users');              // 유저페�
 const loginRouter = require('./routes/login/login');              // 로그인
 const registerRouter = require('./routes/login/register');        // 회원가입
 const petitionRouter = require('./routes/petition/petition');        // 청원 관련 Routes
-const cPostsRouter = require('./routes/community_posts/community_posts');   // 자유게시판 Routes
+const cPostsRouter = require('./routes/free/free');   // 자유게시판 Routes
 const noticeRouter = require('./routes/notice/notice');            // 공지사항 Routes
 
 //데이터베이스
@@ -43,7 +43,7 @@ app.use('/users', usersRouter);            // 유저페이지
 app.use('/login', loginRouter);            // 로그인
 app.use('/register', registerRouter);      // 회원가입
 app.use('/petition', petitionRouter);      // 청원 관련 Routes
-app.use('/community_posts', cPostsRouter); // 자유게시판 Routes
+app.use('/free', cPostsRouter); // 자유게시판 Routes
 app.use('/notice', noticeRouter);          // 공지사항 Routes
 
 // catch 404 and forward to error handler
